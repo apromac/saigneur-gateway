@@ -11,9 +11,9 @@
 	</parent>
 
 	<groupId>com.apromac.saigneur</groupId>
-	<artifactId>saigneur-gateway</artifactId>
+	<artifactId>saigneur-gateway-web</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>saigneur-gateway</name>
+	<name>saigneur-gateway-web</name>
 	<description>Microservice servant à se positionner comme le point d entrée unique de notre application et s occupe de dispatcher, modifier et appliquer des filtres et des règles à ces requêtes</description>
 
 	<properties>
@@ -81,10 +81,30 @@
 	</dependencyManagement>
 
 	<build>
+		<finalName>saigneur-gateway-web</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.22.2</version>
+				<configuration>
+					<useFile>true</useFile>
+					<includes>
+						<include>**/*Tests.java</include>
+						<include>**/*Test.java</include>
+					</includes>
+					<excludes>
+						<exclude>**/Abstract*.java</exclude>
+						<exclude>**/SaigneurGatewayWeb*.java</exclude>
+					</excludes>
+					<junitArtifactName>junit:junit</junitArtifactName>
+					<parallel>methods</parallel>
+					<threadCount>10</threadCount>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>

@@ -8,10 +8,10 @@ import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 @SpringBootApplication
 @EnableZuulProxy
 @EnableDiscoveryClient
-public class SaigneurGatewayApplication {
+public class SaigneurGatewayWebApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SaigneurGatewayApplication.class, args);
+		SpringApplication.run(SaigneurGatewayWebApplication.class, args);
 	}
 
 }
