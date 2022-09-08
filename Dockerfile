@@ -1,8 +1,8 @@
 # ======================================================================
 # DOCKERFILE
-# CONSTRUCTION DE L'IMAGE DOCKER DU MICROSERVICE "saigneur-gateway"
+# CONSTRUCTION DE L'IMAGE DOCKER DU MICROSERVICE "saigneur-gateway-web"
 # ======================================================================
-FROM openjdk:11-alpine
+FROM adoptopenjdk/openjdk11
 LABEL maintainer = "apromac <abraham.tiene@apromac.ci>"
 
 RUN mkdir /usr/local/microservice \
