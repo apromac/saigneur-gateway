@@ -8,8 +8,9 @@ services:
     ports:
       - "9001:9001"
     restart: always
-#    networks:
-#      - saigneur-network
+    networks:
+      - saigneur-network
 
-#networks:
-#  network-saigneur: {}
+networks:
+  saigneur-network:
+    external: true
