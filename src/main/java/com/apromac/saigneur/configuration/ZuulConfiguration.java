@@ -5,9 +5,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.boot.web.servlet.error.ErrorController;
 import org.springframework.cglib.proxy.*;
-import org.springframework.cloud.netflix.zuul.filters.RouteLocator;
-import org.springframework.cloud.netflix.zuul.web.ZuulController;
-import org.springframework.cloud.netflix.zuul.web.ZuulHandlerMapping;
+import org.springframework.cloud.gateway.route.RouteLocator;
+import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
+//import org.springframework.cloud.netflix.zuul.filters.RouteLocator;
+//import org.springframework.cloud.netflix.zuul.web.ZuulController;
+//import org.springframework.cloud.netflix.zuul.web.ZuulHandlerMapping;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -94,5 +96,20 @@ public class ZuulConfiguration {
 //            return methodProxy.invokeSuper(target, args);
 //        }
 //
+//    }
+
+
+
+//    @Bean
+//    public RouteLocator gatewayRoutes(RouteLocatorBuilder builder) {
+//        return builder.routes()
+//                .route(r -> r.path("/employee/**")
+//                        .uri("http://localhost:8081/")
+//                        .id("employeeModule"))
+//
+//                .route(r -> r.path("/consumer/**")
+//                        .uri("http://localhost:8082/")
+//                        .id("consumerModule"))
+//                .build();
 //    }
 }
