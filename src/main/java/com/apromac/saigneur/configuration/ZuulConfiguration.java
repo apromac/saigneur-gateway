@@ -14,7 +14,7 @@ import org.springframework.context.annotation.Configuration;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
 
-@Configuration
+//@Configuration
 public class ZuulConfiguration {
 
     /** The path returned by ErrorContoller.getErrorPath() with Spring Boot < 2.5 (and no longer available on Spring Boot >= 2.5). */
