@@ -1,6 +1,6 @@
 version: "3.9"
 services:
-  docker-gateway-web:
+  docker-saigneur-gateway-web:
     image: saigneur-gateway-web
     container_name: msaigneur-gateway-web
     build:
